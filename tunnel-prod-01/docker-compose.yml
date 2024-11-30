@@ -5,20 +5,10 @@ services:
     restart: unless-stopped
     command: tunnel run
     networks:
-      frontend:
-        ipv4_address: 172.10.0.2
-      backend:
-        ipv4_address: 172.20.0.2
+      tunnel:
+        ipv4_address: 172.30.0.2
     environment:
       - TUNNEL_TOKEN=${TUNNEL_TOKEN}
 networks:
-  frontend:
-    name: frontend
-    ipam:
-      config:
-        - subnet: 172.10.0.0/24
-  backend:
-    name: backend
-    ipam:
-      config:
-        - subnet: 172.20.0.0/24
+  tunnel:
+    external: true
