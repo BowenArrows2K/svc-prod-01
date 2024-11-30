@@ -1,0 +1,26 @@
+http:
+  routers:
+    homeassistant-rtr:
+      entryPoints: 
+        - websecure
+      rule: "Host(`ha-prod-01.home.bowen-arrows.net`) || Host(`ha-prod-01.bowen-arrows.net`)"
+      service: homeassistant-svc
+      tls:
+        certResolver: cloudflare
+    pihole-rtr:
+      entryPoints:
+        - websecure
+      rule: "Host(`pihole-prod-01.home.bowen-arrows.net`)"
+      service: pihole-svc
+      tls:
+        certResolver: cloudflare
+
+  services:
+    homeassistant-svc:
+      loadBalancer:
+        servers:
+        - url: http://192.168.1.132:8123
+    pihole-svc:
+      loadBalancer:
+        servers:
+        - url: http://192.168.1.129
