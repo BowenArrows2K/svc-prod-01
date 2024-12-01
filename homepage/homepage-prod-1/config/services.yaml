@@ -54,7 +54,7 @@
 - Web Utils:
     - Cloudflared:
         icon: cloudflare.png
-        href: https://one.dash.cloudflare.com/e96bcee05b9bdedfe0261ab679b9fa91/networks/tunnels?search=
+        href: https://one.dash.cloudflare.com/e96bcee05b9bdedfe0261ab679b9fa91/networks/tunnels/cfd_tunnel/f6bcff1d-4a56-41ec-864f-75d1a9b5f8fd/edit?tab=publicHostname
         container: tunnel-prod-1
         description: Cloudflare Tunnel
         widget:

@@ -1,12 +1,27 @@
 ---
 # For configuration options and examples, please see:
-# https://gethomepage.dev/configs/service-widgets
+# https://gethomepage.dev/latest/configs/service-widgets
+
+- logo:
+    icon: /images/favicon.png
+
+- datetime:
+    text_size: xl
+    format:
+      dateStyle: short
+      timeStyle: long
 
 - resources:
+    label: System
     cpu: true
     memory: true
+
+- resources:
+    label: Storage
     disk: /
 
 - search:
-    provider: duckduckgo
-    target: _blank
+    provider: google # google, duckduckgo, bing, baidu, brave or custom
+    focus: true # Optional, will set focus to the search bar on page load
+    showSearchSuggestions: true # Optional, will show search suggestions. Defaults to false
+    target: _blank # One of _self, _blank, _parent or _top
