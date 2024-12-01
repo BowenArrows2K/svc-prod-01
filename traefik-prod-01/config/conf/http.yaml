@@ -12,6 +12,8 @@ http:
         - websecure
       rule: "Host(`pihole-prod-01.home.bowen-arrows.net`)"
       service: pihole-svc
+      middlewares:
+        - "pihole-redirectregex"
       tls:
         certResolver: cloudflare
     proxmox-rtr:
@@ -21,6 +23,13 @@ http:
       service: proxmox-svc
       tls:
         certResolver: cloudflare
+
+  middlewares:
+    pihole-redirectregex:
+      redirectRegex:
+        regex: "^https://pihole-prod-01.home.bowen-arrows.net/(.*)"
+        replacement: "https://pihole-prod-01.home.bowen-arrows.net/${1}"
+
 
   services:
     homeassistant-svc:
