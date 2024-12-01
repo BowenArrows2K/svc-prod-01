@@ -1,0 +1,20 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/latest/configs/settings
+
+title: BowenArrows Home
+favicon: /images/favicon.png
+background: /images/BowenArrows.png
+theme: dark
+color: cyan
+hideVersion: true
+
+quicklaunch:
+  searchDescriptions: true
+  hideInternetSearch: true
+  showSearchSuggestions: true
+  hideVisitURL: true
+
+providers:
+  openweathermap: openweathermapapikey
+  weatherapi: weatherapiapikey

@@ -1,0 +1,63 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/latest/configs/services
+
+- Applications:
+    - Home Assistant:
+        icon: home-assistant.png
+        href: https://ha-prod-01.home.bowen-arrows.net/
+#     - Grocy:
+#         icon: grocy.png
+#         href: https://grocy.bowen-arrows.net
+#         container: grocy-prod-1
+#         description: Home ERP
+#     - Uptime Kuma:
+#         icon: uptime-kuma.png
+#         href: https://kuma-prod-1.bowen-arrows.net/status/main
+#         container: kuma-prod-1
+#         description: Uptime Checker
+- Lab:
+    # - Authentik:
+    #     icon: authentik.png
+    #     href: https://authentik-prod-1.bowen-arrows.net
+    #     container: authentik-prod-1-server
+    #     description: Open Source SSO Provider
+    #     widget:
+    #         type: authentik
+    #         url: http://authentik-prod-1-server:9000
+    #         key: {{HOMEPAGE_VAR_AUTHENTIK_KEY}}
+    - Proxmox:
+        icon: proxmox.png
+        href: https://prx-prod-01.home.bowen-arrows.net/
+        description: Virtualization Dashboard
+    - Traefik Dashboard:
+        icon: traefik.png
+        container: traefik-prod-1
+        description: Reverse Proxy Dashboard
+    - Pi-hole:
+        icon: pi-hole.png
+        href: https://pihole-prod-01.home.bowen-arrows.net/admin
+        description: Local DNS & Ad Blocking
+    - Dockge:
+        icon: dockge.png
+        href: https://dockge-prod-01.home.bowen-arrows.net
+        container: dockge-prod-1
+        description: Docker Compose Mangement
+
+- Web Utils:
+    - Cloudflared:
+        icon: cloudflare.png
+        href: https://one.dash.cloudflare.com/e96bcee05b9bdedfe0261ab679b9fa91/networks/tunnels?search=
+        container: tunnel-prod-1
+        description: Cloudflare Tunnel
+        widget:
+            type: cloudflared
+            accountid: {{HOMEPAGE_VAR_CLOUDFLARE_ACC_ID}} # from zero trust dashboard url e.g. https://one.dash.cloudflare.com/<accountid>/home/quick-start
+            tunnelid: {{HOMEPAGE_VAR_CLOUDFLARE_TUNNEL_ID}} # found in tunnels dashboard under the tunnel name
+            key: {{HOMEPAGE_VAR_CLOUDFLARE_API_KEY}} # api token with `Account.Cloudflare Tunnel:Read` https://dash.cloudflare.com/profile/api-tokens
+
+
+# - My Third Group:
+#     - My Third Service:
+#         href: http://localhost/
+#         description: Homepage is 😎
