@@ -5,7 +5,8 @@
 - Applications:
     - Home Assistant:
         icon: home-assistant.png
-        href: https://ha-prod-01.home.bowen-arrows.net/
+        href: https://ha-prod-1.home.bowen-arrows.net/
+        description: Home Automation Platform
 #     - Grocy:
 #         icon: grocy.png
 #         href: https://grocy.bowen-arrows.net
@@ -28,21 +29,27 @@
     #         key: {{HOMEPAGE_VAR_AUTHENTIK_KEY}}
     - Proxmox:
         icon: proxmox.png
-        href: https://prx-prod-01.home.bowen-arrows.net/
-        description: Virtualization Dashboard
+        href: https://prx-prod-1.home.bowen-arrows.net/
+        description: Virtualization Host
+    - Dockge:
+        icon: dockge.png
+        href: https://dockge-prod-1.home.bowen-arrows.net
+        container: dockge-prod-1
+        description: Docker Compose Mangement
+
+- Network:
+    - Router:
+        icon: netgear.png
+        href: http://192.168.1.1/
+        description: Network Router
+    - Pi-hole:
+        icon: pi-hole.png
+        href: https://pihole-prod-1.home.bowen-arrows.net/admin
+        description: Local DNS & Ad Blocking
     - Traefik Dashboard:
         icon: traefik.png
         container: traefik-prod-1
         description: Reverse Proxy Dashboard
-    - Pi-hole:
-        icon: pi-hole.png
-        href: https://pihole-prod-01.home.bowen-arrows.net/admin
-        description: Local DNS & Ad Blocking
-    - Dockge:
-        icon: dockge.png
-        href: https://dockge-prod-01.home.bowen-arrows.net
-        container: dockge-prod-1
-        description: Docker Compose Mangement
 
 - Web Utils:
     - Cloudflared:

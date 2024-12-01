@@ -3,14 +3,14 @@ http:
     homeassistant-rtr:
       entryPoints: 
         - websecure
-      rule: "Host(`ha-prod-01.home.bowen-arrows.net`) || Host(`ha-prod-01.bowen-arrows.net`)"
+      rule: "Host(`ha-prod-1.home.bowen-arrows.net`) || Host(`ha-prod-1.bowen-arrows.net`)"
       service: homeassistant-svc
       tls:
         certResolver: cloudflare
     pihole-rtr:
       entryPoints:
         - websecure
-      rule: "Host(`pihole-prod-01.home.bowen-arrows.net`)"
+      rule: "Host(`pihole-prod-1.home.bowen-arrows.net`)"
       service: pihole-svc
       middlewares:
         - "pihole-redirectregex"
@@ -19,7 +19,7 @@ http:
     proxmox-rtr:
       entryPoints:
         - websecure
-      rule: "Host(`prx-prod-01.home.bowen-arrows.net`)"
+      rule: "Host(`prx-prod-1.home.bowen-arrows.net`)"
       service: proxmox-svc
       tls:
         certResolver: cloudflare
@@ -27,8 +27,8 @@ http:
   middlewares:
     pihole-redirectregex:
       redirectRegex:
-        regex: "^https://pihole-prod-01.home.bowen-arrows.net/(.*)"
-        replacement: "https://pihole-prod-01.home.bowen-arrows.net/${1}"
+        regex: "^https://pihole-prod-1.home.bowen-arrows.net/(.*)"
+        replacement: "https://pihole-prod-1.home.bowen-arrows.net/${1}"
 
 
   services:
