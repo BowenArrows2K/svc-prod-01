@@ -26,6 +26,7 @@ services:
       - "traefik.http.routers.homepage-prod-1-https.rule=Host(`homepage-prod-1.home.bowen-arrows.net`) || Host(`homepage-prod-1.bowen-arrows.net`)"
       - "traefik.http.routers.homepage-prod-1-https.tls=true"
       - "traefik.http.routers.homepage-prod-1-https.tls.certresolver=cloudflare"
+      - "traefik.http.routers.homepage-prod-1-https.middlewares=authentik-prod-1-middleware@file"
       - "traefik.http.routers.homepage-prod-1-https.service=homepage-prod-1-svc"
       - "traefik.http.services.homepage-prod-1-svc.loadBalancer.server.port=3000"
     networks:

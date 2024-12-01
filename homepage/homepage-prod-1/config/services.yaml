@@ -3,6 +3,15 @@
 # https://gethomepage.dev/latest/configs/services
 
 - Applications:
+    - Authentik:
+        icon: authentik.png
+        href: https://authentik-prod-1.bowen-arrows.net
+        container: authentik-prod-1-server
+        description: Open Source SSO Provider
+        # widget:
+        #     type: authentik
+        #     url: http://authentik-prod-1-server:9000
+        #     key: {{HOMEPAGE_VAR_AUTHENTIK_KEY}}
     - Home Assistant:
         icon: home-assistant.png
         href: https://ha-prod-1.home.bowen-arrows.net/
