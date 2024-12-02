@@ -16,6 +16,10 @@
         icon: home-assistant.png
         href: https://ha-prod-1.home.bowen-arrows.net/
         description: Home Automation Platform
+    - Wiki.js:
+        icon: wikijs.png
+        href: https://wiki-prod-1.home.bowen-arrows.net/
+        description: Self Hosted Wiki
 #     - Grocy:
 #         icon: grocy.png
 #         href: https://grocy.bowen-arrows.net
