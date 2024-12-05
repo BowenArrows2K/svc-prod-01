@@ -74,7 +74,6 @@
     - Cloudflared - Unrelated:
         icon: cloudflare.png
         href: https://one.dash.cloudflare.com/e96bcee05b9bdedfe0261ab679b9fa91/networks/tunnels/cfd_tunnel/9605cc8b-7217-447a-ba40-a23e2dd53f9f/edit?tab=publicHostname
-        container: tunnel-prod-1
         description: Cloudflare Tunnel
         widget:
             type: cloudflared
