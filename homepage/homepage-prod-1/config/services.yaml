@@ -61,7 +61,7 @@
         description: Reverse Proxy
 
 - Web Utils:
-    - Cloudflared:
+    - Cloudflared - BowenArrows:
         icon: cloudflare.png
         href: https://one.dash.cloudflare.com/e96bcee05b9bdedfe0261ab679b9fa91/networks/tunnels/cfd_tunnel/f6bcff1d-4a56-41ec-864f-75d1a9b5f8fd/edit?tab=publicHostname
         container: tunnel-prod-1
@@ -70,6 +70,16 @@
             type: cloudflared
             accountid: {{HOMEPAGE_VAR_CLOUDFLARE_ACC_ID}} # from zero trust dashboard url e.g. https://one.dash.cloudflare.com/<accountid>/home/quick-start
             tunnelid: {{HOMEPAGE_VAR_CLOUDFLARE_TUNNEL_ID}} # found in tunnels dashboard under the tunnel name
+            key: {{HOMEPAGE_VAR_CLOUDFLARE_API_KEY}} # api token with `Account.Cloudflare Tunnel:Read` https://dash.cloudflare.com/profile/api-tokens
+    - Cloudflared - Unrelated:
+        icon: cloudflare.png
+        href: https://one.dash.cloudflare.com/e96bcee05b9bdedfe0261ab679b9fa91/networks/tunnels/cfd_tunnel/9605cc8b-7217-447a-ba40-a23e2dd53f9f/edit?tab=publicHostname
+        container: tunnel-prod-1
+        description: Cloudflare Tunnel
+        widget:
+            type: cloudflared
+            accountid: {{HOMEPAGE_VAR_CLOUDFLARE_ACC_ID}} # from zero trust dashboard url e.g. https://one.dash.cloudflare.com/<accountid>/home/quick-start
+            tunnelid: 9605cc8b-7217-447a-ba40-a23e2dd53f9f # found in tunnels dashboard under the tunnel name
             key: {{HOMEPAGE_VAR_CLOUDFLARE_API_KEY}} # api token with `Account.Cloudflare Tunnel:Read` https://dash.cloudflare.com/profile/api-tokens
 
 
