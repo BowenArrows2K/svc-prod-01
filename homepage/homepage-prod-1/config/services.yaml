@@ -16,6 +16,10 @@
         icon: home-assistant.png
         href: https://ha-prod-1.home.bowen-arrows.net/
         description: Home Automation Platform
+    - Node Red:
+        icon: node-red.png
+        href: https://nodered-prod-1.home.bowen-arrows.net/
+        description: Flow Based Automation Platform
     - Wiki.js:
         icon: wikijs.png
         href: https://wiki-prod-1.bowen-arrows.net/login
@@ -62,7 +66,7 @@
     - Traefik Dashboard:
         icon: traefik.png
         container: traefik-prod-1
-        description: Reverse Proxy Dashboard
+        description: Reverse Proxy
 
 - Web Utils:
     - Cloudflared:
