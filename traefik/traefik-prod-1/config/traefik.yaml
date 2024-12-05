@@ -13,6 +13,8 @@ api:
   debug: false
 
 entryPoints:
+  webunsecure:
+    address: :80
   web:
     address: :80
     http:

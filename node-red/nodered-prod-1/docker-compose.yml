@@ -13,6 +13,7 @@ services:
     #   - 1880:1880
     volumes:
       - node_red_data:/data
+    restart: unless-stopped
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.nodered-prod-1-http.entrypoints=web"
