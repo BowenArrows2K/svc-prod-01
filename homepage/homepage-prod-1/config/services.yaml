@@ -29,21 +29,8 @@
 #         href: https://grocy.bowen-arrows.net
 #         container: grocy-prod-1
 #         description: Home ERP
-#     - Uptime Kuma:
-#         icon: uptime-kuma.png
-#         href: https://kuma-prod-1.bowen-arrows.net/status/main
-#         container: kuma-prod-1
-#         description: Uptime Checker
+    
 - Lab:
-    # - Authentik:
-    #     icon: authentik.png
-    #     href: https://authentik-prod-1.bowen-arrows.net
-    #     container: authentik-prod-1-server
-    #     description: Open Source SSO Provider
-    #     widget:
-    #         type: authentik
-    #         url: http://authentik-prod-1-server:9000
-    #         key: {{HOMEPAGE_VAR_AUTHENTIK_KEY}}
     - Proxmox:
         icon: proxmox.png
         href: https://prx-prod-1.home.bowen-arrows.net/
@@ -53,6 +40,11 @@
         href: https://dockge-prod-1.home.bowen-arrows.net
         container: dockge-prod-1
         description: Docker Compose Mangement
+    - Uptime Kuma:
+        icon: uptime-kuma.png
+        href: https://kuma-prod-1.home.bowen-arrows.net/
+        container: kuma-prod-1
+        description: Uptime Checker
 
 - Network:
     - Router:
