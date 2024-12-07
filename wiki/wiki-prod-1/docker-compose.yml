@@ -21,6 +21,7 @@ services:
 
   wiki-prod-1:
     image: ghcr.io/requarks/wiki:2
+    container_name: wiki-prod-1
     depends_on:
       - wiki-db
     environment:
