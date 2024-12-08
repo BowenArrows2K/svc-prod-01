@@ -21,16 +21,6 @@
         href: https://nodered-prod-1.home.bowen-arrows.net/
         container: nodered-prod-1
         description: Flow Based Automation Platform
-    # - Wiki.js:
-    #     icon: wikijs.png
-    #     href: https://wiki-prod-1.bowen-arrows.net/login
-    #     container: wiki-prod-1
-    #     description: Self Hosted Wiki
-#     - Grocy:
-#         icon: grocy.png
-#         href: https://grocy.bowen-arrows.net
-#         container: grocy-prod-1
-#         description: Home ERP
     
 - Lab:
     - Proxmox:
@@ -82,9 +72,3 @@
             accountid: {{HOMEPAGE_VAR_CLOUDFLARE_ACC_ID}} # from zero trust dashboard url e.g. https://one.dash.cloudflare.com/<accountid>/home/quick-start
             tunnelid: 9605cc8b-7217-447a-ba40-a23e2dd53f9f # found in tunnels dashboard under the tunnel name
             key: {{HOMEPAGE_VAR_CLOUDFLARE_API_KEY}} # api token with `Account.Cloudflare Tunnel:Read` https://dash.cloudflare.com/profile/api-tokens
-
-
-# - My Third Group:
-#     - My Third Service:
-#         href: http://localhost/
-#         description: Homepage is 😎
