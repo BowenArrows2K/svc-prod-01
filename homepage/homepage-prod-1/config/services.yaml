@@ -21,6 +21,11 @@
         href: https://nodered-prod-1.home.bowen-arrows.net/
         container: nodered-prod-1
         description: Flow Based Automation Platform
+    - BookStack:
+        icon: bookstack.png
+        href: https://bookstack-prod-1.bowen-arrows.net/
+        container: bookstack-prod-1
+        description: A Bookstack Instances
     
 - Lab:
     - Proxmox:

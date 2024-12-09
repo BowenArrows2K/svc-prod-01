@@ -7,7 +7,7 @@ networks:
 services:
   bookstack:
     image: lscr.io/linuxserver/bookstack:latest
-    container_name: bookstack
+    container_name: bookstack-prod-1
     depends_on:
       - mariadb
     env_file:
