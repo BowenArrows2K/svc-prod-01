@@ -15,10 +15,10 @@ services:
       # ⚠️ READ IT CAREFULLY. If you did it wrong, your data could end up writing into a WRONG PATH.
       # ⚠️ 1. FULL path only. No relative path (MUST)
       # ⚠️ 2. Left Stacks Path === Right Stacks Path (MUST)
-      - /home/bowenarrows/projects:/home/bowenarrows/projects
+      - /home/bowenarrows/projects/dockge/dockge-compose:/home/bowenarrows/projects/dockge/dockge-compose
     environment:
       # Tell Dockge where to find the stacks
-      - DOCKGE_STACKS_DIR=/home/bowenarrows/projects
+      - DOCKGE_STACKS_DIR=/home/bowenarrows/projects/dockge/dockge-compose
     networks:
       frontend:
         ipv4_address: 172.10.0.10
