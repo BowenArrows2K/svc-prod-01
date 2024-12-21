@@ -11,9 +11,9 @@ services:
     labels:
       - traefik.enable=true
       - traefik.http.routers.ddb-proxy-http.entrypoints=web
-      - traefik.http.routers.ddb-proxy-http.rule=Host(`ddb-proxy.home.bowen-arrows.net`)
+      - traefik.http.routers.ddb-proxy-http.rule=Host(`ddb-proxy.home.bowenarrows.net`)
       - traefik.http.routers.ddb-proxy-https.entrypoints=websecure
-      - traefik.http.routers.ddb-proxy-https.rule=Host(`ddb-proxy.home.bowen-arrows.net`)
+      - traefik.http.routers.ddb-proxy-https.rule=Host(`ddb-proxy.home.bowenarrows.net`)
       - traefik.http.routers.ddb-proxy-https.tls=true
       - traefik.http.routers.ddb-proxy-https.tls.certresolver=cloudflare
       - traefik.http.routers.ddb-proxy-https.service=ddb-proxy-svc

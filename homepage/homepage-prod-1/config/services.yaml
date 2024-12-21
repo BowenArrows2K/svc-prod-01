@@ -5,7 +5,7 @@
 - Applications:
     - Authentik:
         icon: authentik.png
-        href: https://authentik-prod-1.bowen-arrows.net
+        href: https://authentik-prod-1.bowenarrows.net
         container: authentik-prod-1-server
         description: Open Source SSO Provider
         # widget:
@@ -14,32 +14,32 @@
         #     key: {{HOMEPAGE_VAR_AUTHENTIK_KEY}}
     - Home Assistant:
         icon: home-assistant.png
-        href: https://ha-prod-1.home.bowen-arrows.net/
+        href: https://ha-prod-1.home.bowenarrows.net/
         description: Home Automation Platform
     - Node Red:
         icon: node-red.png
-        href: https://nodered-prod-1.home.bowen-arrows.net/
+        href: https://nodered-prod-1.home.bowenarrows.net/
         container: nodered-prod-1
         description: Flow Based Automation Platform
     - BookStack:
         icon: bookstack.png
-        href: https://bookstack-prod-1.bowen-arrows.net/
+        href: https://bookstack-prod-1.bowenarrows.net/
         container: bookstack-prod-1
         description: A Bookstack Instances
     
 - Lab:
     - Proxmox:
         icon: proxmox.png
-        href: https://prx-prod-1.home.bowen-arrows.net/
+        href: https://prx-prod-1.home.bowenarrows.net/
         description: Virtualization Host
     - Dockge:
         icon: dockge.png
-        href: https://dockge-prod-1.home.bowen-arrows.net
+        href: https://dockge-prod-1.home.bowenarrows.net
         container: dockge-prod-1
         description: Docker Compose Mangement
     - Uptime Kuma:
         icon: uptime-kuma.png
-        href: https://kuma-prod-1.home.bowen-arrows.net/
+        href: https://kuma-prod-1.home.bowenarrows.net/
         container: kuma-prod-1
         description: Uptime Checker
 
@@ -50,7 +50,7 @@
         description: Network Router
     - Pi-hole:
         icon: pi-hole.png
-        href: https://pihole-prod-1.home.bowen-arrows.net/admin
+        href: https://pihole-prod-1.home.bowenarrows.net/admin
         description: Local DNS & Ad Blocking
     - Traefik Dashboard:
         icon: traefik.png
