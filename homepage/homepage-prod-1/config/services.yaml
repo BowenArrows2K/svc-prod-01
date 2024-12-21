@@ -42,6 +42,11 @@
         href: https://kuma-prod-1.home.bowenarrows.net/
         container: kuma-prod-1
         description: Uptime Checker
+    - Grafana:
+        icon: grafana.png
+        href: https://grafana-prod-1.home.bowenarrows.net/
+        container: grafana-prod-1
+        description: Metrics Dashboard
 
 - Network:
     - Router:
