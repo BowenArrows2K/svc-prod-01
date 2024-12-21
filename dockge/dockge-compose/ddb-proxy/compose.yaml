@@ -10,7 +10,7 @@ services:
     restart: unless-stopped
     labels:
       - traefik.enable=true
-      - traefik.http.routers.ddb-proxy-http.entrypoints=webunsecure
+      - traefik.http.routers.ddb-proxy-http.entrypoints=web
       - traefik.http.routers.ddb-proxy-http.rule=Host(`ddb-proxy.home.bowen-arrows.net`)
       - traefik.http.routers.ddb-proxy-https.entrypoints=websecure
       - traefik.http.routers.ddb-proxy-https.rule=Host(`ddb-proxy.home.bowen-arrows.net`)
