@@ -1,0 +1,37 @@
+services:
+  foundry:
+    image: felddy/foundryvtt:release
+    hostname: vtt-prod-1
+    volumes:
+      - type: bind
+        source: /home/bowenarrows/projects/foundryvtt/vtt-prod-1/data
+        target: /data
+    environment:
+      - TIMEZONE=America/Chicago
+      - FOUNDRY_UID=1000
+      - FOUNDRY_PASSWORD=${FOUNDRY_PASSWORD}
+      - FOUNDRY_USERNAME=${FOUNDRY_USERNAME}
+      - FOUNDRY_ADMIN_KEY=${FOUNDRY_ADMIN_KEY}
+      - FOUNDRY_PROXY_PORT=443
+      - FOUNDRY_PROXY_SSL=true
+    # ports:
+    #   - target: 30000
+    #     published: 30000
+    #     protocol: tcp
+    networks:
+      - frontend
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.vtt-prod-1-http.entrypoints=web"
+      - "traefik.http.routers.vtt-prod-1-http.rule=Host(`vtt.home.bowenarrows.net`) || Host(`vtt.bowenarrows.net`)"
+      - "traefik.http.routers.vtt-prod-1-https.entrypoints=websecure"
+      - "traefik.http.routers.vtt-prod-1-https.rule=Host(`vtt.home.bowenarrows.net`) || Host(`vtt.bowenarrows.net`)"
+      - "traefik.http.routers.vtt-prod-1-https.tls=true"
+      - "traefik.http.routers.vtt-prod-1-https.tls.certresolver=cloudflare"
+      - "traefik.http.routers.vtt-prod-1-https.service=vtt-prod-1-svc"
+      - "traefik.http.services.vtt-prod-1-svc.loadBalancer.server.port=30000"
+
+networks:
+  frontend:
+    external: true
