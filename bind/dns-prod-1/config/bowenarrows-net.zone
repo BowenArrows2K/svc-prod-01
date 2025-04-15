@@ -1,0 +1,19 @@
+$TTL 2d
+
+$ORIGIN bowenarrows.net.
+
+@                   IN      SOA     ns.bowenarrows.net. info.bowenarrows.net. (
+                                    2022122800      ; serial
+                                    12h             ; refresh
+                                    15m             ; retry
+                                    3w              ; expire
+                                    2h              ; minimum ttl
+                                    )
+                    
+                    IN      NS      ns.bowenarrows.net.
+
+ns                  IN      A       192.168.1.131
+
+; -- add dns records below
+
+authentik-prod-1    IN      A       192.168.1.131
