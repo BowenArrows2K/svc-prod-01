@@ -42,6 +42,11 @@
         href: https://kuma-prod-1.home.bowenarrows.net/
         container: kuma-prod-1
         description: Uptime Checker
+    - CheckMK:
+        icon: checkmk.png
+        href: https://mon-prod-1.home.bowenarrows.net/
+        container: mon-prod-1
+        description: Monitoring Dashboard
     - Grafana:
         icon: grafana.png
         href: https://grafana-prod-1.home.bowenarrows.net/
