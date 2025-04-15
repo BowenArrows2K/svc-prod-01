@@ -1,0 +1,29 @@
+networks:
+  frontend:
+    external: true
+  backend:
+    external: true
+services:
+  glance:
+    image: glanceapp/glance
+    container_name: home-prod-1
+    volumes:
+      - ./config:/app/config
+      - /var/run/docker.sock:/var/run/docker.sock
+    # ports:
+    #   - 8080:8080
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.home-prod-1-http.entrypoints=web"
+      - "traefik.http.routers.home-prod-1-http.rule=Host(`home-prod-1.home.bowenarrows.net`) || Host(`home-prod-1.bowenarrows.net`)"
+      - "traefik.http.routers.home-prod-1-https.entrypoints=websecure"
+      - "traefik.http.routers.home-prod-1-https.rule=Host(`home-prod-1.home.bowenarrows.net`) || Host(`home-prod-1.bowenarrows.net`)"
+      - "traefik.http.routers.home-prod-1-https.tls=true"
+      - "traefik.http.routers.home-prod-1-https.tls.certresolver=cloudflare"
+      # - "traefik.http.routers.home-prod-1-https.middlewares=authentik-prod-1-middleware@file"
+      - "traefik.http.routers.home-prod-1-https.service=home-prod-1-svc"
+      - "traefik.http.services.home-prod-1-svc.loadBalancer.server.port=8080"
+    networks:
+      - frontend
+      - backend
+    restart: unless-stopped
