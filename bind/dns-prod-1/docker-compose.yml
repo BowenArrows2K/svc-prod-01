@@ -1,3 +1,7 @@
+networks:
+  backend:
+    external: true
+
 services:
   bind9:
     container_name: dns-prod-1
@@ -5,6 +9,8 @@ services:
     environment:
       - BIND9_USER=root
       - TZ=America/Chicago
+    networks:
+      - backend
     ports:
       - "53:53/tcp"
       - "53:53/udp"
