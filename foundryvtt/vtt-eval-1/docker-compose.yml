@@ -1,7 +1,7 @@
 services:
   foundry:
-    image: felddy/foundryvtt:13.333
-    hostname: vtt-prod-1
+    image: felddy/foundryvtt:13
+    hostname: vtt-eval-1
     volumes:
       - type: bind
         source: ./data
@@ -23,14 +23,14 @@ services:
     restart: unless-stopped
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.vtt-prod-1-http.entrypoints=web"
-      - "traefik.http.routers.vtt-prod-1-http.rule=Host(`vtt.home.bowenarrows.net`) || Host(`vtt.bowenarrows.net`)"
-      - "traefik.http.routers.vtt-prod-1-https.entrypoints=websecure"
-      - "traefik.http.routers.vtt-prod-1-https.rule=Host(`vtt.home.bowenarrows.net`) || Host(`vtt.bowenarrows.net`)"
-      - "traefik.http.routers.vtt-prod-1-https.tls=true"
-      - "traefik.http.routers.vtt-prod-1-https.tls.certresolver=cloudflare"
-      - "traefik.http.routers.vtt-prod-1-https.service=vtt-prod-1-svc"
-      - "traefik.http.services.vtt-prod-1-svc.loadBalancer.server.port=30000"
+      - "traefik.http.routers.vtt13-prod-1-http.entrypoints=web"
+      - "traefik.http.routers.vtt13-prod-1-http.rule=Host(`vtt13.home.bowenarrows.net`) || Host(`vtt13.bowenarrows.net`)"
+      - "traefik.http.routers.vtt13-prod-1-https.entrypoints=websecure"
+      - "traefik.http.routers.vtt13-prod-1-https.rule=Host(`vtt13.home.bowenarrows.net`) || Host(`vtt13.bowenarrows.net`)"
+      - "traefik.http.routers.vtt13-prod-1-https.tls=true"
+      - "traefik.http.routers.vtt13-prod-1-https.tls.certresolver=cloudflare"
+      - "traefik.http.routers.vtt13-prod-1-https.service=vtt13-prod-1-svc"
+      - "traefik.http.services.vtt13-prod-1-svc.loadBalancer.server.port=30000"
 
 networks:
   frontend:

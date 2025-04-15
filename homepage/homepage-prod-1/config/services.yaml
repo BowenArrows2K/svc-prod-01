@@ -48,6 +48,18 @@
         container: grafana-prod-1
         description: Metrics Dashboard
 
+- Foundry:
+    - FoundryVTT:
+        icon: foundry-vtt.png
+        href: https://vtt.home.bowenarrows.net/
+        container: vtt-prod-1-foundry-1
+        description: Roleplaying Game
+    - FoundryVTT 13:
+        icon: foundry-vtt.png
+        href: https://vtt13.home.bowenarrows.net/
+        container: vtt-eval-1-foundry-1
+        description: Roleplaying Game
+
 - Network:
     - Router:
         icon: netgear.png
