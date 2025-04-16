@@ -1,0 +1,25 @@
+---
+networks:
+  frontend:
+    external: true
+services:
+  portainer:
+    image: portainer/portainer-ce:latest
+    container_name: port-prod-1
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./portainer-data:/data
+    networks:
+      - frontend
+    labels:
+      traefik.enable: true
+      traefik.http.routers.port-prod-1-https.rule: "Host(`port-prod-1.home.bowenarrows.net`) || Host(`port-prod-1.bowenarrows.net`)"
+      traefik.http.routers.port-prod-1-https.entrypoints: "websecure"
+      traefik.http.routers.port-prod-1-https.tls: true
+      traefik.http.routers.port-prod-1-https.tls.certresolver: "cloudflare"
+      traefik.http.routers.port-prod-1-https.service: "port-prod-1-svc"
+      traefik.http.services.port-prod-1-svc.loadBalancer.server.port: 9000

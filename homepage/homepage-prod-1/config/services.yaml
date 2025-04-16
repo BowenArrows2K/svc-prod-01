@@ -27,6 +27,11 @@
         icon: proxmox.png
         href: https://prx-prod-1.home.bowenarrows.net/
         description: Virtualization Host
+    - Portainer:
+        icon: portainer.png
+        href: https://port-prod-1.home.bowenarrows.net/
+        container: port-prod-1
+        description: Container Management
     - Dockge:
         icon: dockge.png
         href: https://dockge-prod-1.home.bowenarrows.net

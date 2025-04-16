@@ -1,0 +1,3 @@
+/portainer-data/*
+!/portainer-data/compose
+!/portainer-data/custom_templates

@@ -123,6 +123,9 @@ pages:
                 - title: Proxmox
                   url: https://prx-prod-1.home.bowenarrows.net/
                   icon: di:proxmox
+                - title: Portainer
+                  url: https://port-prod-1.home.bowenarrows.net/
+                  icon: di:portainer
                 - title: Dockge
                   url: https://dockge-prod-1.home.bowenarrows.net/
                   icon: di:dockge
