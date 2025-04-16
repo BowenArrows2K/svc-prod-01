@@ -116,9 +116,6 @@ pages:
                 - title: Node Red
                   url: https://nodered-prod-1.home.bowenarrows.net/
                   icon: di:node-red
-                - title: BookStack
-                  url: https://bookstack-prod-1.bowenarrows.net/  
-                  icon: di:bookstack
             - type: monitor
               cache: 1m
               title: Lab
