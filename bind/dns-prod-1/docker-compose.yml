@@ -19,3 +19,8 @@ services:
       - ./cache:/var/cache/bind
       - ./records:/var/lib/bind
     restart: always
+    labels:
+      glance.name: Bind9 DNS
+      glance.icon: si:docker
+      glance.id: dns-prod-1
+      glance.description: Bind9 DNS server

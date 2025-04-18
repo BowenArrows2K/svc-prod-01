@@ -25,3 +25,8 @@ services:
       tunnel:
         ipv4_address: 172.30.0.3
     restart: unless-stopped
+    labels:
+      glance.name: Traefik
+      glance.icon: si:traefikproxy
+      glance.id: traefik-prod-1
+      glance.description: Traefik

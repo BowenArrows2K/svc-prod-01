@@ -22,15 +22,20 @@ services:
       - frontend
     restart: unless-stopped
     labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.vtt-prod-1-http.entrypoints=web"
-      - "traefik.http.routers.vtt-prod-1-http.rule=Host(`vtt.home.bowenarrows.net`) || Host(`vtt.bowenarrows.net`)"
-      - "traefik.http.routers.vtt-prod-1-https.entrypoints=websecure"
-      - "traefik.http.routers.vtt-prod-1-https.rule=Host(`vtt.home.bowenarrows.net`) || Host(`vtt.bowenarrows.net`)"
-      - "traefik.http.routers.vtt-prod-1-https.tls=true"
-      - "traefik.http.routers.vtt-prod-1-https.tls.certresolver=cloudflare"
-      - "traefik.http.routers.vtt-prod-1-https.service=vtt-prod-1-svc"
-      - "traefik.http.services.vtt-prod-1-svc.loadBalancer.server.port=30000"
+      glance.name: Foundry VTT
+      glance.icon: si:foundryvirtualtabletop
+      glance.id: vtt-prod-1
+      glance.url: https://vtt.home.bowenarrows.net
+      glance.description: Foundry Virtual Tabletop
+      traefik.enable: true
+      traefik.http.routers.vtt-prod-1-http.entrypoints: web
+      traefik.http.routers.vtt-prod-1-http.rule: Host(`vtt.home.bowenarrows.net`) || Host(`vtt.bowenarrows.net`)
+      traefik.http.routers.vtt-prod-1-https.entrypoints: websecure
+      traefik.http.routers.vtt-prod-1-https.rule: Host(`vtt.home.bowenarrows.net`) || Host(`vtt.bowenarrows.net`)
+      traefik.http.routers.vtt-prod-1-https.tls: true
+      traefik.http.routers.vtt-prod-1-https.tls.certresolver: cloudflare
+      traefik.http.routers.vtt-prod-1-https.service: vtt-prod-1-svc
+      traefik.http.services.vtt-prod-1-svc.loadBalancer.server.port: 30000
 
 networks:
   frontend:

@@ -17,12 +17,17 @@ services:
       - frontend
       - backend
     labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.kuma-prod-1-http.entrypoints=web"
-      - "traefik.http.routers.kuma-prod-1-http.rule=Host(`kuma-prod-1.home.bowenarrows.net`) || Host(`kuma-prod-1.bowenarrows.net`)"
-      - "traefik.http.routers.kuma-prod-1-https.entrypoints=websecure"
-      - "traefik.http.routers.kuma-prod-1-https.rule=Host(`kuma-prod-1.home.bowenarrows.net`) || Host(`kuma-prod-1.bowenarrows.net`)"
-      - "traefik.http.routers.kuma-prod-1-https.tls=true"
-      - "traefik.http.routers.kuma-prod-1-https.tls.certresolver=cloudflare"
-      - "traefik.http.routers.kuma-prod-1-https.service=kuma-prod-1-svc"
-      - "traefik.http.services.kuma-prod-1-svc.loadBalancer.server.port=3001"
+      glance.name: Uptime Kuma
+      glance.icon: si:uptimekuma
+      glance.id: kuma-prod-1
+      glance.url: https://kuma-prod-1.home.bowenarrows.net
+      glance.description: Monitoring
+      traefik.enable: true
+      traefik.http.routers.kuma-prod-1-http.entrypoints: web
+      traefik.http.routers.kuma-prod-1-http.rule: Host(`kuma-prod-1.home.bowenarrows.net`) || Host(`kuma-prod-1.bowenarrows.net`)
+      traefik.http.routers.kuma-prod-1-https.entrypoints: websecure
+      traefik.http.routers.kuma-prod-1-https.rule: Host(`kuma-prod-1.home.bowenarrows.net`) || Host(`kuma-prod-1.bowenarrows.net`)
+      traefik.http.routers.kuma-prod-1-https.tls: true
+      traefik.http.routers.kuma-prod-1-https.tls.certresolver: cloudflare
+      traefik.http.routers.kuma-prod-1-https.service: kuma-prod-1-svc
+      traefik.http.services.kuma-prod-1-svc.loadBalancer.server.port: 3001

@@ -18,4 +18,9 @@ services:
       - NET_ADMIN
       - NET_RAW
     restart: unless-stopped
+    labels:
+      glance.name: Tailscale
+      glance.icon: si:tailscale
+      glance.id: ts-prod-1
+      glance.description: VPN
 networks: {}

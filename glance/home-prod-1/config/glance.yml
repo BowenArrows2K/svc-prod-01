@@ -158,9 +158,6 @@ pages:
                 - title: Pi-hole
                   url: https://pihole-prod-1.home.bowenarrows.net/admin
                   icon: di:pi-hole
-                - title: Traefik Dashboard
-                  url: https://traefik-prod-1.home.bowenarrows.net/
-                  icon: di:traefik
             - type: monitor
               cache: 1m
               title: Web Utils

@@ -15,15 +15,20 @@ services:
       - node_red_data:/data
     restart: unless-stopped
     labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.nodered-prod-1-http.entrypoints=web"
-      - "traefik.http.routers.nodered-prod-1-http.rule=Host(`nodered-prod-1.home.bowenarrows.net`)"
-      - "traefik.http.routers.nodered-prod-1-https.entrypoints=websecure"
-      - "traefik.http.routers.nodered-prod-1-https.rule=Host(`nodered-prod-1.home.bowenarrows.net`)"
-      - "traefik.http.routers.nodered-prod-1-https.tls=true"
-      - "traefik.http.routers.nodered-prod-1-https.tls.certresolver=cloudflare"
-      - "traefik.http.routers.nodered-prod-1-https.service=nodered-prod-1-svc"
-      - "traefik.http.services.nodered-prod-1-svc.loadBalancer.server.port=1880"
+      glance.name: Node-RED
+      glance.icon: si:nodered
+      glance.id: nodered-prod-1
+      glance.url: https://nodered-prod-1.home.bowenarrows.net
+      glance.description: Home Automation Flows
+      traefik.enable: true
+      traefik.http.routers.nodered-prod-1-http.entrypoints: web
+      traefik.http.routers.nodered-prod-1-http.rule: Host(`nodered-prod-1.home.bowenarrows.net`)
+      traefik.http.routers.nodered-prod-1-https.entrypoints: websecure
+      traefik.http.routers.nodered-prod-1-https.rule: Host(`nodered-prod-1.home.bowenarrows.net`)
+      traefik.http.routers.nodered-prod-1-https.tls: true
+      traefik.http.routers.nodered-prod-1-https.tls.certresolver: cloudflare
+      traefik.http.routers.nodered-prod-1-https.service: nodered-prod-1-svc
+      traefik.http.services.nodered-prod-1-svc.loadBalancer.server.port: 1880
     
     
 volumes:
