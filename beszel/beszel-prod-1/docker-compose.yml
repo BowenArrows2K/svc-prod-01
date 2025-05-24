@@ -1,0 +1,50 @@
+networks:
+  frontend:
+    external: true
+  backend:
+    external: true
+
+services:
+  beszel:
+    image: henrygd/beszel:latest
+    container_name: beszel-prod-1
+    restart: unless-stopped
+    networks:
+      - frontend
+      - backend
+    # ports:
+    #   - 8090:8090
+    volumes:
+      - ./beszel_data:/beszel_data
+      - ./beszel_socket:/beszel_socket
+    labels:
+      glance.name: Beszel
+      glance.icon: si:docker
+      glance.id: beszel-prod-1
+      glance.description: Beszel Web GUI
+      glance.url: https://beszel-prod-1.home.bowenarrows.net
+      traefik.enable: true
+      traefik.http.routers.beszel-prod-1-http.entrypoints: web
+      traefik.http.routers.beszel-prod-1-http.rule: Host(`beszel-prod-1.home.bowenarrows.net`) || Host(`beszel-prod-1.bowenarrows.net`)
+      traefik.http.routers.beszel-prod-1-https.entrypoints: websecure
+      traefik.http.routers.beszel-prod-1-https.rule: Host(`beszel-prod-1.home.bowenarrows.net`) || Host(`beszel-prod-1.bowenarrows.net`)
+      traefik.http.routers.beszel-prod-1-https.tls: true
+      traefik.http.routers.beszel-prod-1-https.tls.certresolver: cloudflare
+      traefik.http.routers.beszel-prod-1-https.service: beszel-prod-1-svc
+      traefik.http.services.beszel-prod-1-svc.loadBalancer.server.port: 8090
+
+  beszel-agent:
+    image: henrygd/beszel-agent:latest
+    container_name: beszel-agent
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - ./beszel_socket:/beszel_socket
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    environment:
+      LISTEN: /beszel_socket/beszel.sock
+      # Do not remove quotes around the key
+      KEY: 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGJKGTee2PFQ2PgRm6j1LSM7PCcZuFtp7NTed53mWxoP'
+    labels:
+      glance.name: Beszel Agent
+      glance.parent: beszel-prod-1
