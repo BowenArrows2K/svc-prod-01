@@ -17,7 +17,7 @@ services:
       - frontend
     labels:
       glance.name: Portainer
-      glance.icon: si:portainer
+      glance.icon: sh:portainer-light
       glance.id: port-prod-1
       glance.url: https://port-prod-1.home.bowenarrows.net
       glance.description: Container Management

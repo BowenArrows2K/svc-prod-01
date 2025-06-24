@@ -20,7 +20,7 @@ services:
     restart: unless-stopped
     labels:
       glance.name: Tailscale
-      glance.icon: si:tailscale
+      glance.icon: sh:tailscale-light
       glance.id: ts-prod-1
       glance.description: VPN
 networks: {}

@@ -16,7 +16,7 @@ services:
     restart: unless-stopped
     labels:
       glance.name: Node-RED
-      glance.icon: si:nodered
+      glance.icon: sh:node-red-light
       glance.id: nodered-prod-1
       glance.url: https://nodered-prod-1.home.bowenarrows.net
       glance.description: Home Automation Flows

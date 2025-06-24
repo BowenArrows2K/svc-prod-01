@@ -24,7 +24,7 @@ services:
       - backend
     labels:
       glance.name: Dockge
-      glance.icon: si:docker
+      glance.icon: sh:dockge-light
       glance.id: dockge-prod-1
       glance.url: https://dockge-prod-1.home.bowenarrows.net
       glance.description: Docker Compose GUI

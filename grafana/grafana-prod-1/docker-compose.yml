@@ -17,7 +17,7 @@ services:
       - frontend
     labels:
       glance.name: Grafana
-      glance.icon: si:grafana
+      glance.icon: sh:grafana-light
       glance.id: grafana-prod-1
       glance.url: https://grafana-prod-1.home.bowenarrows.net
       glance.description: Data Visualization

@@ -18,34 +18,34 @@ pages:
               - title: Personal
                 links:
                   - title: Gmail
-                    icon: di:gmail
+                    icon: sh:gmail
                     url: https://mail.google.com/mail/u/0/
                   - title: Amazon
-                    icon: di:amazon
+                    icon: sh:amazon
                     url: https://www.amazon.com/
                   - title: My GitHub
-                    icon: di:github-light.png
+                    icon: sh:github-light.png
                     url: https://github.com/BowenArrows2K
               - title: Entertainment
                 color: 10 70 50
                 links:
                   - title: Hulu
-                    icon: di:hulu
+                    icon: sh:hulu
                     url: https://www.hulu.com/
                   - title: Disney+
-                    icon: di:disney-plus
+                    icon: sh:disney-plus
                     url: https://www.disneyplus.com/
                   - title: YouTube
-                    icon: di:youtube
+                    icon: sh:youtube
                     url: https://www.youtube.com/
                   - title: Prime Video
-                    icon: di:prime-video-alt-dark
+                    icon: sh:amazon-prime-video
                     url: https://www.amazon.com/gp/video/storefront
               - title: Anime
                 color: 200 50 50
                 links:
                   - title: Crunchyroll
-                    icon: https://www.crunchyroll.com/build/assets/img/favicons/favicon-v2-96x96.png
+                    icon: sh:crunchyroll
                     url: https://www.crunchyroll.com/
                   - title: Hidive
                     icon: https://static.diceplatform.com/prod/original/dce.hidive/settings/HIDIVE_Logo_iOS_1024x1024_281_29.Y3YMf.vMQ59.png?ts=1727963356
@@ -109,65 +109,55 @@ pages:
               sites:
                 - title: Authentik
                   url: https://authentik-prod-1.bowenarrows.net/
-                  icon: di:authentik
+                  icon: sh:authentik
                 - title: Home Assistant
                   url: https://ha-prod-1.home.bowenarrows.net/
-                  icon: di:home-assistant
+                  icon: sh:home-assistant
                 - title: Node Red
                   url: https://nodered-prod-1.home.bowenarrows.net/
-                  icon: di:node-red
+                  icon: sh:node-red
                 - title: Proxmox
                   url: https://prx-prod-1.home.bowenarrows.net/
-                  icon: di:proxmox
+                  icon: sh:proxmox
                 - title: Portainer
                   url: https://port-prod-1.home.bowenarrows.net/
-                  icon: di:portainer
+                  icon: sh:portainer
             - type: monitor
               cache: 1m
               title: Monitoring
               sites:
                 - title: Dockge
                   url: https://dockge-prod-1.home.bowenarrows.net/
-                  icon: di:dockge
+                  icon: sh:dockge
                 - title: Uptime Kuma
                   url: https://kuma-prod-1.home.bowenarrows.net/
-                  icon: di:uptime-kuma
-                - title: CheckMK
-                  url: https://mon-prod-1.home.bowenarrows.net/
-                  icon: di:checkmk
+                  icon: sh:uptime-kuma
+                - title: Beszel
+                  url: https://beszel-prod-1.home.bowenarrows.net/
+                  icon: sh:beszel
                 - title: Grafana
                   url: https://grafana-prod-1.home.bowenarrows.net/
-                  icon: di:grafana
-            - type: monitor
-              cache: 1m
-              title: Foundry
-              sites:
-                - title: FoundryVTT
-                  url: https://vtt.home.bowenarrows.net/
-                  icon: di:foundry-vtt.png
-                - title: FoundryVTT 13
-                  url: https://vtt13.home.bowenarrows.net/
-                  icon: di:foundry-vtt.png
+                  icon: sh:grafana
             - type: monitor
               cache: 1m
               title: Network
               sites:
                 - title: Router
                   url: http://192.168.1.1/
-                  icon: di:netgear
+                  icon: sh:netgear
                 - title: Pi-hole
                   url: https://pihole-prod-1.home.bowenarrows.net/admin
-                  icon: di:pi-hole
+                  icon: sh:pi-hole
             - type: monitor
               cache: 1m
               title: Web Utils
               sites:
                 - title: Cloudflared - BowenArrows
                   url: https://one.dash.cloudflare.com/e96bcee05b9bdedfe0261ab679b9fa91/networks/tunnels/cfd_tunnel/f6bcff1d-4a56-41ec-864f-75d1a9b5f8fd/edit?tab=publicHostname
-                  icon: di:cloudflare
+                  icon: sh:cloudflare
                 - title: Cloudflared - Unrelated
                   url: https://one.dash.cloudflare.com/e96bcee05b9bdedfe0261ab679b9fa91/networks/tunnels/cfd_tunnel/9605cc8b-7217-447a-ba40-a23e2dd53f9f/edit?tab=publicHostname
-                  icon: di:cloudflare
+                  icon: sh:cloudflare
               
           - type: docker-containers
             hide-by-default: false

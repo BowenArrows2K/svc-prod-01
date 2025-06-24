@@ -27,6 +27,6 @@ services:
     restart: unless-stopped
     labels:
       glance.name: Traefik
-      glance.icon: si:traefikproxy
+      glance.icon: sh:traefik-light
       glance.id: traefik-prod-1
       glance.description: Traefik

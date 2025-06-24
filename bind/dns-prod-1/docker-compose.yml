@@ -21,6 +21,6 @@ services:
     restart: always
     labels:
       glance.name: Bind9 DNS
-      glance.icon: si:docker
+      glance.icon: sh:bind-9-light
       glance.id: dns-prod-1
       glance.description: Bind9 DNS server

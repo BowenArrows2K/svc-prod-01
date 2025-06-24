@@ -19,7 +19,7 @@ services:
       - ./beszel_socket:/beszel_socket
     labels:
       glance.name: Beszel
-      glance.icon: si:docker
+      glance.icon: sh:beszel-light
       glance.id: beszel-prod-1
       glance.description: Beszel Web GUI
       glance.url: https://beszel-prod-1.home.bowenarrows.net

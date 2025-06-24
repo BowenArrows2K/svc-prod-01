@@ -14,7 +14,7 @@ services:
     #   - 8080:8080
     labels:
       glance.name: Glance
-      glance.icon: di:glance-light
+      glance.icon: sh:glance-light
       glance.id: home-prod-1
       glance.url: https://home-prod-1.home.bowenarrows.net
       glance.description: Glance Dashboard
