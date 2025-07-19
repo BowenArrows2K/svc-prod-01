@@ -1,0 +1,81 @@
+networks:
+  frontend:
+    external: true
+  backend:
+    external: true
+
+services:
+  outline:
+    image: docker.getoutline.com/outlinewiki/outline:latest
+    container_name: wiki-prod-1
+    env_file: ./outline.env
+    volumes:
+      - storage-data:/var/lib/outline/data
+    depends_on:
+      - postgres
+      - redis
+    # expose:
+    #   - "3000"
+    networks:
+      - frontend
+      - backend
+    labels:
+      glance.name: Outline Wiki
+      glance.icon: sh:outline-light
+      glance.id: wiki-prod-1
+      glance.url: https://wiki-prod-1.home.bowenarrows.net
+      glance.description: "Outline is a fast, open-source, wiki for knowledge management and collaboration that runs on Docker."
+      traefik.enable: true
+      traefik.http.routers.wiki-prod-1-http.entrypoints: web
+      traefik.http.routers.wiki-prod-1-http.rule: Host(`wiki-prod-1.home.bowenarrows.net`) || Host(`wiki.bowenarrows.net`)
+      traefik.http.routers.wiki-prod-1-https.entrypoints: websecure
+      traefik.http.routers.wiki-prod-1-https.rule: Host(`wiki-prod-1.home.bowenarrows.net`) || Host(`wiki.bowenarrows.net`)
+      traefik.http.routers.wiki-prod-1-https.tls: true
+      traefik.http.routers.wiki-prod-1-https.tls.certresolver: cloudflare
+      traefik.http.routers.wiki-prod-1-https.service: wiki-prod-1-svc
+      traefik.http.services.wiki-prod-1-svc.loadBalancer.server.port: 3000
+
+  redis:
+    image: redis
+    env_file: ./outline.env
+    # expose:
+    #   - "6379"
+    networks:
+      - backend
+    volumes:
+      - ./redis.conf:/redis.conf
+    command: ["redis-server", "/redis.conf"]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 30s
+      retries: 3
+    labels:
+      glance.name: Redis Cache
+      glance.parent: wiki-prod-1
+    
+  postgres:
+    image: postgres
+    env_file: ./outline.env
+    # expose:
+    #   - "5432"
+    networks:
+      - backend
+    volumes:
+      - database-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-d", "outline", "-U", "user"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+    environment:
+      POSTGRES_USER: 'user'
+      POSTGRES_PASSWORD: 'pass'
+      POSTGRES_DB: 'outline'
+    labels:
+      glance.name: PostgreSQL Database
+      glance.parent: wiki-prod-1
+
+volumes:
+  database-data:
+  storage-data:
