@@ -155,9 +155,6 @@ pages:
                 - title: Cloudflared - BowenArrows
                   url: https://one.dash.cloudflare.com/e96bcee05b9bdedfe0261ab679b9fa91/networks/tunnels/cfd_tunnel/f6bcff1d-4a56-41ec-864f-75d1a9b5f8fd/edit?tab=publicHostname
                   icon: sh:cloudflare
-                - title: Cloudflared - Unrelated
-                  url: https://one.dash.cloudflare.com/e96bcee05b9bdedfe0261ab679b9fa91/networks/tunnels/cfd_tunnel/9605cc8b-7217-447a-ba40-a23e2dd53f9f/edit?tab=publicHostname
-                  icon: sh:cloudflare
               
           - type: docker-containers
             hide-by-default: false
