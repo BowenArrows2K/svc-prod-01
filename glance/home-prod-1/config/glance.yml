@@ -55,6 +55,8 @@ pages:
                     url: https://myanimelist.net/animelist/Bowenarrows4K
                   
 
+
+
           - type: group
             widgets:
               - type: repository
@@ -70,28 +72,28 @@ pages:
                 issues-limit: 3
                 commits-limit: 3
 
+      - size: full
+        widgets:
           - type: videos
-            style: vertical-list
+            title: Smosh
+            collapse-after-rows: 2
+            style: grid-cards
+            channels:
+              - UCYJPby9DRCteedh5tfxVbrw # Smosh Pit
+              - UCJ2ZDzMRgSrxmwphstrm8Ww # Smosh Games
+              - UCEyodonqP_80YrDvattntmw # Smosh Cast
+              - UCPJHQ5_DLtxZ1gzBvZE99_g # Smosh Alike 
+          - type: videos
+            title: Tech
+            collapse-after-rows: 2
+            style: grid-cards
             channels:
               - UCXuqSBlHAE6Xw-yeJA0Tunw # Linus Tech Tips
               - UCR-DXc1voovS8nhAvccRZhg # Jeff Geerling
-              - UCHnyfMqiRRG1u-2MsSQLbXA # Veritasium
-
-          # - type: rss
-          #   limit: 10
-          #   collapse-after: 3
-          #   cache: 12h
-          #   feeds:
-          #     - url: https://selfh.st/rss/
-          #       title: selfh.st
-          #       limit: 4
-          #     - url: https://ciechanow.ski/atom.xml
-          #     - url: https://www.joshwcomeau.com/rss.xml
-          #       title: Josh Comeau
-          #     - url: https://samwho.dev/rss.xml
-          #     - url: https://ishadeed.com/feed.xml
-          #       title: Ahmad Shadeed
-
+              - UC9x0AN7BWHpCDHSm9NiJFJQ # Network Chuck
+      
+  - name: Homelab
+    columns:
       - size: full
         widgets:
           - type: search
@@ -158,27 +160,3 @@ pages:
               
           - type: docker-containers
             hide-by-default: false
-
-          # - type: group
-          #   widgets:
-          #     - type: reddit
-          #       subreddit: technology
-          #       show-thumbnails: true
-          #     - type: reddit
-          #       subreddit: selfhosted
-          #       show-thumbnails: true
-
-  # Add more pages here:
-  # - name: Your page name
-  #   columns:
-  #     - size: small
-  #       widgets:
-  #         # Add widgets here
-
-  #     - size: full
-  #       widgets:
-  #         # Add widgets here
-
-  #     - size: small
-  #       widgets:
-  #         # Add widgets here
