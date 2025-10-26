@@ -53,27 +53,16 @@ pages:
                   - title: MyAnimeList
                     icon: https://myanimelist.net/favicon.ico
                     url: https://myanimelist.net/animelist/Bowenarrows4K
-                  
-
-
-
-          - type: group
-            widgets:
-              - type: repository
-                title: Homelab Repo
-                repository: BowenArrows2K/svc-prod-01
-                pull-requests-limit: 5
-                issues-limit: 3
-                commits-limit: 3
-              - type: repository
-                title: FVTT Module Repo
-                repository: BowenArrows2K/bowenarrows-utils
-                pull-requests-limit: 5
-                issues-limit: 3
-                commits-limit: 3
 
       - size: full
         widgets:
+          - type: search
+            search-engine: google
+            new-tab: false
+            bangs:
+              - title: YouTube
+                shortcut: "!yt"
+                url: https://www.youtube.com/results?search_query={QUERY}
           - type: videos
             title: Smosh
             collapse-after-rows: 2
@@ -94,6 +83,29 @@ pages:
       
   - name: Homelab
     columns:
+      - size: small
+        widgets:
+          - type: clock
+            hour-format: 12h
+            timezone: America/Chicago
+            label: Missouri
+          - type: calendar
+            first-day-of-week: sunday
+          - type: group
+            widgets:
+              - type: repository
+                title: Homelab Repo
+                repository: BowenArrows2K/svc-prod-01
+                pull-requests-limit: 5
+                issues-limit: 3
+                commits-limit: 3
+              - type: repository
+                title: FVTT Module Repo
+                repository: BowenArrows2K/bowenarrows-utils
+                pull-requests-limit: 5
+                issues-limit: 3
+                commits-limit: 3
+
       - size: full
         widgets:
           - type: search
@@ -157,6 +169,5 @@ pages:
                 - title: Cloudflared - BowenArrows
                   url: https://one.dash.cloudflare.com/e96bcee05b9bdedfe0261ab679b9fa91/networks/tunnels/cfd_tunnel/f6bcff1d-4a56-41ec-864f-75d1a9b5f8fd/edit?tab=publicHostname
                   icon: sh:cloudflare
-              
           - type: docker-containers
             hide-by-default: false
