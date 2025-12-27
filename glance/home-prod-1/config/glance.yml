@@ -1,7 +1,7 @@
 pages:
   - name: Home
     # Optionally, if you only have a single page you can hide the desktop navigation for a cleaner look
-    # hide-desktop-navigation: true
+    hide-desktop-navigation: true
     columns:
       - size: small
         widgets:
@@ -29,15 +29,18 @@ pages:
               - title: Entertainment
                 color: 10 70 50
                 links:
+                  - title: YouTube
+                    icon: sh:youtube
+                    url: https://www.youtube.com/
+                  - title: Netflix
+                    icon: sh:netflix
+                    url: https://www.netflix.com/
                   - title: Hulu
                     icon: sh:hulu
                     url: https://www.hulu.com/
                   - title: Disney+
                     icon: sh:disney-plus
                     url: https://www.disneyplus.com/
-                  - title: YouTube
-                    icon: sh:youtube
-                    url: https://www.youtube.com/
                   - title: Prime Video
                     icon: sh:amazon-prime-video
                     url: https://www.amazon.com/gp/video/storefront
@@ -53,44 +56,6 @@ pages:
                   - title: MyAnimeList
                     icon: https://myanimelist.net/favicon.ico
                     url: https://myanimelist.net/animelist/Bowenarrows4K
-
-      - size: full
-        widgets:
-          - type: search
-            search-engine: google
-            new-tab: false
-            bangs:
-              - title: YouTube
-                shortcut: "!yt"
-                url: https://www.youtube.com/results?search_query={QUERY}
-          - type: videos
-            title: Smosh
-            collapse-after-rows: 2
-            style: grid-cards
-            channels:
-              - UCYJPby9DRCteedh5tfxVbrw # Smosh Pit
-              - UCJ2ZDzMRgSrxmwphstrm8Ww # Smosh Games
-              - UCEyodonqP_80YrDvattntmw # Smosh Cast
-              - UCPJHQ5_DLtxZ1gzBvZE99_g # Smosh Alike 
-          - type: videos
-            title: Tech
-            collapse-after-rows: 2
-            style: grid-cards
-            channels:
-              - UCXuqSBlHAE6Xw-yeJA0Tunw # Linus Tech Tips
-              - UCR-DXc1voovS8nhAvccRZhg # Jeff Geerling
-              - UC9x0AN7BWHpCDHSm9NiJFJQ # Network Chuck
-      
-  - name: Homelab
-    columns:
-      - size: small
-        widgets:
-          - type: clock
-            hour-format: 12h
-            timezone: America/Chicago
-            label: Missouri
-          - type: calendar
-            first-day-of-week: sunday
           - type: group
             widgets:
               - type: repository
@@ -171,3 +136,23 @@ pages:
                   icon: sh:cloudflare
           - type: docker-containers
             hide-by-default: false
+
+      - size: small
+        widgets:
+          - type: videos
+            title: Smosh
+            collapse-after-rows: 2
+            style: grid-cards
+            channels:
+              - UCYJPby9DRCteedh5tfxVbrw # Smosh Pit
+              - UCJ2ZDzMRgSrxmwphstrm8Ww # Smosh Games
+              - UCEyodonqP_80YrDvattntmw # Smosh Cast
+              - UCPJHQ5_DLtxZ1gzBvZE99_g # Smosh Alike 
+          - type: videos
+            title: Tech
+            collapse-after-rows: 2
+            style: grid-cards
+            channels:
+              - UCXuqSBlHAE6Xw-yeJA0Tunw # Linus Tech Tips
+              - UCR-DXc1voovS8nhAvccRZhg # Jeff Geerling
+              - UC9x0AN7BWHpCDHSm9NiJFJQ # Network Chuck
