@@ -7,10 +7,10 @@ networks:
 volumes:
   database:
     driver: local
-  redis:
-    driver: local
 services:
   postgresql:
+    env_file:
+    - .env
     image: docker.io/library/postgres:16-alpine
     container_name: authentik-prod-1-postgresql
     restart: unless-stopped
@@ -28,26 +28,10 @@ services:
       - POSTGRES_DB=${POSTGRES_DB}
     networks:
       - backend
+    ports:
+      - "5432:5432"
     labels:
       glance.name: PostgreSQL
-      glance.parent: authentik-prod-1-server
-  redis:
-    image: docker.io/library/redis:alpine
-    container_name: authentik-prod-1-redis
-    command: --save 60 1 --loglevel warning
-    restart: unless-stopped
-    healthcheck:
-      test: ["CMD-SHELL", "redis-cli ping | grep PONG"]
-      start_period: 20s
-      interval: 30s
-      retries: 5
-      timeout: 3s
-    volumes:
-      - redis:/data
-    networks:
-      - backend
-    labels:
-      glance.name: Redis
       glance.parent: authentik-prod-1-server
   server:
     image: ${AUTHENTIK_IMAGE:-ghcr.io/goauthentik/server}:${AUTHENTIK_TAG:-2024.4.2}
@@ -55,19 +39,20 @@ services:
     restart: unless-stopped
     command: server
     environment:
-      - AUTHENTIK_REDIS__HOST=redis
-      - AUTHENTIK_POSTGRESQL__HOST=postgresql
-      - AUTHENTIK_POSTGRESQL__USER=${POSTGRES_USER}
-      - AUTHENTIK_POSTGRESQL__NAME=${POSTGRES_DB}
-      - AUTHENTIK_POSTGRESQL__PASSWORD=${POSTGRES_PASSWORD}
-      - AUTHENTIK_ERROR_REPORTING__ENABLED=true
-      - AUTHENTIK_SECRET_KEY=${AUTHENTIK_SECRET_KEY}
+      AUTHENTIK_POSTGRESQL__HOST: postgresql
+      AUTHENTIK_POSTGRESQL__USER: ${POSTGRES_USER}
+      AUTHENTIK_POSTGRESQL__NAME: ${POSTGRES_DB}
+      AUTHENTIK_POSTGRESQL__PASSWORD: ${POSTGRES_PASSWORD}
+      AUTHENTIK_ERROR_REPORTING__ENABLED: true
+      AUTHENTIK_SECRET_KEY: ${AUTHENTIK_SECRET_KEY}
     volumes:
-      - ./media:/media
+      - ./data:/data
       - ./custom-templates:/templates
     depends_on:
-      - postgresql
-      - redis
+      postgresql:
+        condition: service_healthy
+    env_file:
+      - .env
     networks:
       - backend
       - frontend
@@ -90,22 +75,21 @@ services:
     restart: unless-stopped
     command: worker
     environment:
-      - AUTHENTIK_REDIS__HOST=redis
-      - AUTHENTIK_POSTGRESQL__HOST=postgresql
-      - AUTHENTIK_POSTGRESQL__USER=${POSTGRES_USER}
-      - AUTHENTIK_POSTGRESQL__NAME=${POSTGRES_DB}
-      - AUTHENTIK_POSTGRESQL__PASSWORD=${POSTGRES_PASSWORD}
-      - AUTHENTIK_ERROR_REPORTING__ENABLED=true
-      - AUTHENTIK_SECRET_KEY=${AUTHENTIK_SECRET_KEY}
+      AUTHENTIK_POSTGRESQL__HOST: postgresql
+      AUTHENTIK_POSTGRESQL__USER: ${POSTGRES_USER}
+      AUTHENTIK_POSTGRESQL__NAME: ${POSTGRES_DB}
+      AUTHENTIK_POSTGRESQL__PASSWORD: ${POSTGRES_PASSWORD}
+      AUTHENTIK_ERROR_REPORTING__ENABLED: true
+      AUTHENTIK_SECRET_KEY: ${AUTHENTIK_SECRET_KEY}
     user: root
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - ./media:/media
+      - ./data:/data
       - ./certs:/certs
       - ./custom-templates:/templates
     depends_on:
-      - postgresql
-      - redis
+      postgresql:
+        condition: service_healthy
     networks:
       - backend
     labels:
