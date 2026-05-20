@@ -90,7 +90,7 @@ pages:
                   url: https://authentik-prod-1.bowenarrows.net/
                   icon: sh:authentik
                 - title: Home Assistant
-                  url: https://ha-prod-1.home.bowenarrows.net/
+                  url: https://ha.shadowrose.net/
                   icon: sh:home-assistant
                 - title: Node Red
                   url: https://nodered-prod-1.home.bowenarrows.net/
@@ -122,7 +122,7 @@ pages:
               title: Network
               sites:
                 - title: Router
-                  url: http://192.168.1.1/
+                  url: http://192.168.0.1/
                   icon: sh:netgear
                 - title: Pi-hole
                   url: https://pihole-prod-1.home.bowenarrows.net/admin

@@ -35,12 +35,12 @@ http:
     homeassistant-svc:
       loadBalancer:
         servers:
-        - url: http://192.168.1.132:8123
+        - url: http://192.168.0.132:8123
     pihole-svc:
       loadBalancer:
         servers:
-        - url: http://192.168.1.129
+        - url: http://192.168.0.128
     proxmox-svc:
       loadBalancer:
         servers:
-        - url: https://192.168.1.130:8006
+        - url: https://192.168.0.130:8006
