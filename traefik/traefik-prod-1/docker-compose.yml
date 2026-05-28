@@ -8,7 +8,7 @@ networks:
 services:
   traefik-prod-1:
     container_name: traefik-prod-1
-    image: traefik:3.0.1
+    image: traefik:3.7.1
     ports:
       - 80:80
       - 443:443
