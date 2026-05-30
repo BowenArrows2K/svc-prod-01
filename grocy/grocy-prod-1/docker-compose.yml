@@ -1,0 +1,36 @@
+networks:
+  frontend:
+    external: true
+  backend:
+    external: true
+services:
+  grocy:
+    container_name: grocy-prod-1
+    image: lscr.io/linuxserver/grocy:latest
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - ./config:/config
+    # ports:
+    #   - 9283:80
+    networks:
+      - frontend
+      - backend
+    labels:
+      glance.name: Grocy
+      glance.icon: sh:grocy-light
+      glance.id: grocy-prod-1
+      glance.url: https://grocy.bowenarrows.net
+      glance.description: Grocy
+      traefik.enable: true
+      traefik.http.routers.grocy-prod-1-http.entrypoints: web
+      traefik.http.routers.grocy-prod-1-http.rule: Host(`grocy-prod-1.home.bowenarrows.net`) || Host(`grocy.bowenarrows.net`)
+      traefik.http.routers.grocy-prod-1-https.entrypoints: websecure
+      traefik.http.routers.grocy-prod-1-https.rule: Host(`grocy-prod-1.home.bowenarrows.net`) || Host(`grocy.bowenarrows.net`)
+      traefik.http.routers.grocy-prod-1-https.tls: true
+      traefik.http.routers.grocy-prod-1-https.tls.certresolver: cloudflare
+      traefik.http.routers.grocy-prod-1-https.service: grocy-prod-1-svc
+      traefik.http.services.grocy-prod-1-svc.loadBalancer.server.port: 80

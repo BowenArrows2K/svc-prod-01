@@ -89,6 +89,9 @@ pages:
                 - title: Authentik
                   url: https://authentik-prod-1.bowenarrows.net/
                   icon: sh:authentik
+                - title: Grocy
+                  url: https://grocy-prod-1.home.bowenarrows.net/
+                  icon: sh:grocy
                 - title: Home Assistant
                   url: https://ha.shadowrose.net/
                   icon: sh:home-assistant
