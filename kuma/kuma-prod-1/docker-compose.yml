@@ -12,7 +12,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - uptime-kuma:/app/data
     container_name: kuma-prod-1
-    image: louislam/uptime-kuma:latest
+    image: louislam/uptime-kuma:2
     networks:
       - frontend
       - backend

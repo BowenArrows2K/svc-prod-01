@@ -95,6 +95,9 @@ pages:
                 - title: Home Assistant
                   url: https://ha.shadowrose.net/
                   icon: sh:home-assistant
+                - title: CubeCoders AMP
+                  url: https://amp.shadowrose.net/
+                  icon: sh:cubecoders-amp.png
                 - title: Node Red
                   url: https://nodered-prod-1.home.bowenarrows.net/
                   icon: sh:node-red
