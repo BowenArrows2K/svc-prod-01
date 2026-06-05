@@ -84,6 +84,19 @@ pages:
             widgets:
             - type: monitor
               cache: 1m
+              title: ShadowRose
+              sites:
+                - title: Home Assistant
+                  url: https://ha.shadowrose.net/
+                  icon: sh:home-assistant
+                - title: CubeCoders AMP
+                  url: https://amp.shadowrose.net/
+                  icon: sh:cubecoders-amp.png
+                - title: Jellyfin
+                  url: https://jellyfin.shadowrose.net/
+                  icon: sh:jellyfin
+            - type: monitor
+              cache: 1m
               title: Services
               sites:
                 - title: Authentik
@@ -92,13 +105,7 @@ pages:
                 - title: Grocy
                   url: https://grocy-prod-1.home.bowenarrows.net/
                   icon: sh:grocy
-                - title: Home Assistant
-                  url: https://ha.shadowrose.net/
-                  icon: sh:home-assistant
-                - title: CubeCoders AMP
-                  url: https://amp.shadowrose.net/
-                  icon: sh:cubecoders-amp.png
-                - title: Node Red
+                - title: Node-Red
                   url: https://nodered-prod-1.home.bowenarrows.net/
                   icon: sh:node-red
                 - title: Proxmox
