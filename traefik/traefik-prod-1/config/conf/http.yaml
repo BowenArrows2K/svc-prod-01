@@ -1,12 +1,5 @@
 http:
   routers:
-    homeassistant-rtr:
-      entryPoints: 
-        - websecure
-      rule: "Host(`ha-prod-1.home.bowenarrows.net`) || Host(`ha-prod-1.bowenarrows.net`)"
-      service: homeassistant-svc
-      tls:
-        certResolver: cloudflare
     pihole-rtr:
       entryPoints:
         - websecure
@@ -32,15 +25,11 @@ http:
 
 
   services:
-    homeassistant-svc:
-      loadBalancer:
-        servers:
-        - url: http://192.168.0.132:8123
     pihole-svc:
       loadBalancer:
         servers:
-        - url: http://192.168.0.128
+        - url: http://10.69.1.9
     proxmox-svc:
       loadBalancer:
         servers:
-        - url: https://192.168.0.130:8006
+        - url: https://10.69.1.11:8006

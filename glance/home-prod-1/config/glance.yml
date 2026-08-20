@@ -134,9 +134,9 @@ pages:
               cache: 1m
               title: Network
               sites:
-                - title: Router
-                  url: http://192.168.0.1/
-                  icon: sh:netgear
+                - title: ShadowRose Unifi
+                  url: https://unifi.ui.com/consoles/74F92CDCA568000000000A3D6145000000000AD092B6000000006A38202C:1609656935/network/default/
+                  icon: sh:ubiquiti-unifi
                 - title: Pi-hole
                   url: https://pihole-prod-1.home.bowenarrows.net/admin
                   icon: sh:pi-hole
