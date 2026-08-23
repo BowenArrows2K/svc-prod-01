@@ -28,7 +28,7 @@ http:
     pihole-svc:
       loadBalancer:
         servers:
-        - url: http://10.69.1.9
+        - url: https://10.69.1.9
     proxmox-svc:
       loadBalancer:
         servers:
